@@ -1,0 +1,88 @@
+.button{
+    background:lightblue;
+    border: 1px solid black;
+    margin: 0.15em 0.25em;
+    width:5em;
+    display: inline;
+}
+
+body{
+    width: 100%;
+    margin: 0px;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+#charList{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+#charList span{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+}
+#charList span>span{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.owns{
+    background-color: #ff0000;
+}
+.selectorButton.inactive.owns{
+    background-color: #7f0000;
+}
+.want{
+    background-color: #0000ff;
+}
+.selectorButton.inactive.want{
+    background-color: #00007f;
+}
+.want.owns{
+    background-color: #ff00ff;
+}
+.both{
+    background-color: #ff00ff;
+}
+.selectorButton.inactive.both{
+    background-color: #7f007f;
+}
+
+.content {
+    background: url(https://marvelheroes.com/sites/all/themes/bootstrap/bootstrap_subtheme/images/bg-home-news-1.jpg) top center;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+
+#footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.selectorButton{
+    float: left;
+    width: 33.3333%;
+    display: inline-block;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: central;
+}
+.selectorButton.inactive{
+    color: #7F7F7F;
+}

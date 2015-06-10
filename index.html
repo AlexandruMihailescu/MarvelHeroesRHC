@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>MH15: Random Hero Calculator</title>
+        <link rel="stylesheet" type="text/css" media="all" href="/style/global.css" />
+    </head>
+    <body>
+        <div class="content">
+            <!--div id="buttons">
+                <div class="button" id="sortNameAsc">name asc</div>
+                <div class="button" id="sortNameDesc">name desc</div>
+                <div class="button" id="sortCostAsc">cost asc</div>
+                <div class="button" id="sortCostDesc">cost desc</div>
+            </div-->
+                <div id="charList" style="display: inline-block;">
+                </div>
+        </div>
+        <div id="footer">
+            <span class="want selectorButton inactive" onclick="selectorButtonClicked(this);">
+                want
+            </span>
+            <span class="both selectorButton inactive" onclick="selectorButtonClicked(this);">
+                both
+            </span>
+            <span class="owns selectorButton" onclick="selectorButtonClicked(this);">
+                owns
+            </span>
+        </div>
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="/js/script.js"></script>
+        <script>
+            loadHeroes();
+            $(".button#sortNameAsc").click(function(){sortHeroes(sortByNameAsc)});
+            $(".button#sortNameDesc").click(function(){sortHeroes(sortByNameDesc)});
+            $(".button#sortCostAsc").click(function(){sortHeroes(sortByCostAsc)});
+            $(".button#sortCostDesc").click(function(){sortHeroes(sortByCostDesc)});
+        </script>
+    </body>
+</html>

@@ -30,15 +30,8 @@
         </div>
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="/js/script.js"></script>
-        <script>
-            if (window.XMLHttpRequest)
-    {
-       xhttp=new XMLHttpRequest();
-    }
-    xhttp.open("GET","data/heroes.xml",false);
-    xhttp.send();
-    var heroesXML=xhttp.responseXML;   
-            $( document ).ready(function(){
+        <script> 
+            $( document ).ready(function(){ loadHeroes();
             $(".button#sortNameAsc").click(function(){sortHeroes(sortByNameAsc)});
             $(".button#sortNameDesc").click(function(){sortHeroes(sortByNameDesc)});
             $(".button#sortCostAsc").click(function(){sortHeroes(sortByCostAsc)});

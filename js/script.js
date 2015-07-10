@@ -80,10 +80,21 @@ function toggleDesire(heroBox)
 }
 function loadHeroes()
 {
-    var heroesXML=loadDataXML();
-    var heroesList=heroesXML.getElementsByTagName("hero");
-    for (i=0; i<heroesList.length; i++)
-        $("#charList").append("<span onclick='toggleDesire(this)' data-cost=\""+heroesList[i].getElementsByTagName("cost")[0].childNodes[0].nodeValue+"\" data-name=\""+heroesList[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"\">"+"<span style='text-align:center;background-image: url(/assets/images/"+heroesList[i].getElementsByTagName("imag")[0].childNodes[0].nodeValue+");background-size: cover;'/>"+"</span>");
+    $.ajax({
+    type: "GET",
+    url: "data/heroes.xml",
+    dataType: "xml",
+    success: function(xml){
+    /*var xmlDoc = $.parseXML(xml);
+    $xml = $( xmlDoc );*/
+    alert($(xml).find("heroes").find("hero").get(1).find("cost").text());
+    $(xml).find("heroes").find("hero").each(function(){$("#charList").append("<span onclick='toggleDesire(this)' data-cost=\""+$(this).find("cost").text()+"\" data-name=\""+$(this).find("name").text()+"\">"+"<span style='text-align:center;background-image: url(/assets/images/"+$(this).find("imag").text()+");background-size: cover;'/>"+"</span>");});
+    //var heroesXML=loadDataXML();
+    //var heroesList=heroesXML.getElementsByTagName("hero");
+    /*for (i=0; i<$heroesList.length; i++)
+        $("#charList").append("<span onclick='toggleDesire(this)' data-cost=\""+heroesList[i].getElementsByTagName("cost")[0].childNodes[0].nodeValue+"\" data-name=\""+heroesList[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"\">"+"<span style='text-align:center;background-image: url(/assets/images/"+heroesList[i].getElementsByTagName("imag")[0].childNodes[0].nodeValue+");background-size: cover;'/>"+"</span>");*/
+        }
+    });
 }
 function selectorButtonClicked(button)
 {

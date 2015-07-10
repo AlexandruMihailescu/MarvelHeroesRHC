@@ -31,11 +31,11 @@
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="/js/script.js"></script>
         <script>
-            loadHeroes();
+            $( document ).ready(function(){loadHeroes();
             $(".button#sortNameAsc").click(function(){sortHeroes(sortByNameAsc)});
             $(".button#sortNameDesc").click(function(){sortHeroes(sortByNameDesc)});
             $(".button#sortCostAsc").click(function(){sortHeroes(sortByCostAsc)});
-            $(".button#sortCostDesc").click(function(){sortHeroes(sortByCostDesc)});
+            $(".button#sortCostDesc").click(function(){sortHeroes(sortByCostDesc)});});
         </script>
     </body>
 </html>
